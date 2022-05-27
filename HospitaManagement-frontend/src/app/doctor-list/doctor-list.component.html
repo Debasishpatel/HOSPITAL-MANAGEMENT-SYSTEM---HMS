@@ -1,0 +1,22 @@
+<h3 class="my-4">Doctor's List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Specialist</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+            <td>{{doctor.id}}</td>
+            <td>{{doctor.name}}</td>
+            <td>{{doctor.age}}</td>
+            <td>{{doctor.gender}}</td>
+            <td>{{doctor.specialist}}</td>
+        </tr>
+    </tbody>
+</table>

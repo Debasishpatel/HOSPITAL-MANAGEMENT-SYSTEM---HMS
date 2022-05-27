@@ -1,0 +1,20 @@
+.split{
+    display: flex;
+    border: solid 3px black;
+}
+
+
+.box1{
+    flex: 1;
+    margin: 1rem;
+}
+.box2{
+    flex: 1;
+    margin: 1rem;
+}
+
+@media (max-width:1466px){
+    .split{
+        display: block;
+    }
+}

@@ -1,0 +1,231 @@
+<div class="maincontainer my-5">
+    <main>
+        <section class="box1">
+
+            <header>
+                <nav>
+                    <a class="logo d-flex" href="/">
+                        <a href="/"><img src="../../assets/img/caduceus-symbol.png" alt=""></a>
+                        <h3 class="logo">HMS</h3>
+                    </a>
+                </nav>
+            </header>
+            <div class="content1 d-flex flex-column mt-5">
+                <h1 class="head-appo text-center">BOOK APPOINTMENT</h1>
+                <div class="col-md-8 offset-md-3  mx-auto">
+                    <form ngForm class="d-flex flex-column" (ngSubmit)="onSubmit(); assignmentsForm.reset()"
+                        #assignmentsForm>
+
+                        <div class="form-group mb-2">
+                            <label for="">Patient Name</label>
+                            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="patient.name">
+                        </div>
+
+                        <!-- <div class="form-group mb-2">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName">
+                        </div> -->
+                        <div class="d-flex flex-column">
+                            <label for="">
+                                AVAILABLE DOCTORS || SELECT ONE
+                            </label>
+                            <select name="visitedDoctor" id="visitedDoctor" [(ngModel)]="patient.visitedDoctor"
+                                class="dropDownMenu">
+
+
+
+
+                                <option value="" *ngFor="let doctor of doctors" [ngValue]="doctor.name">{{doctor.name}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label for="">Meeting-Date</label>
+                            <input type="date" class="form-control" name="dateOfVisit" id="dateOfVisit"
+                                [(ngModel)]="patient.dateOfVisit">
+                        </div>
+
+                        <button class="btn btn-success mt-3 p-2" type="submit">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="box2">
+            <div class="box3">
+                <div class="p2nav">
+                    <a href="/"><img src="../../assets/img/caduceus-symbol.png" alt=""></a>
+                    <a href="/"><img id="filter" src="../../assets/img/filter.png" alt=""></a>
+                </div>
+                <form action="" target="_blank" class="d-flex flex-column" (ngSubmit)="viewProfile(putDoctorId)">
+                    <input class="searchbox" type="textfield" placeholder=" search for doctors in Below">
+
+                    <div class="secondDropdown d-flex justify-content-between dropfield">
+                        <select name="visitedDoctor" id="visitedDoctor" [(ngModel)]="putDoctorId" class="dropDownField">
+
+
+
+
+                            <option value="" *ngFor="let doctor of doctors" [ngValue]="doctor.id">{{doctor.name}}
+                            </option>
+                        </select>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success p-2 dropbutton" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" type="submit">
+                            View
+                            Profile
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade  modal-set" id="exampleModal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content modal-hw">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title p-3" id="exampleModalLabel">Doctor's Profile</h6>
+                                        <button type="button" class="btn-close  me-3" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body d-flex" *ngFor="let doctor of doctors"
+                                        style="overflow-x: hidden;">
+
+                                        <div class="NGbody flex-fill" *ngIf="doctor.id === putDoctorId ">
+
+
+
+                                            <div class="card flex-fill d-flex " style="width: 31rem;">
+                                                <img src="https://bootstrapmade.com/demo/templates/Medilab/assets/img/doctors/doctors-3.jpg"
+                                                    class="card-img-top" alt="Chicago Skyscrapers"
+                                                    style="height: 30rem; width: 30rem; " />
+                                                <!-- <div class="card-body">
+                                                    <h5 class="card-title mt-2">
+
+
+                                                    </h5>
+                                                    <p class="card-text">
+                                                    </p>
+                                                </div> -->
+                                                <ul class="list-group list-group-light list-group-small">
+                                                    <li class="list-group-item px-4"> Name :
+                                                        {{doctor.name}}</li>
+                                                    <li class="list-group-item px-4">Age:
+                                                        {{doctor.age}}</li>
+                                                    <li class="list-group-item px-4"> Gender:
+                                                        {{doctor.gender}}</li>
+                                                    <li class="list-group-item px-4">Specialization:
+                                                        {{doctor.specialist}}</li>
+                                                    <li class="list-group-item px-4">No Of Patients Attended:
+                                                        4K+
+                                                    </li>
+                                                </ul>
+                                                <div class="card-body" style="text-align: center;">
+
+                                                    <!-- Facebook -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #3b5998;" href="#!" role="button"><i
+                                                            class="fab fa-facebook-f"></i></a>
+
+                                                    <!-- Twitter -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #55acee;" href="#!" role="button"><i
+                                                            class="fab fa-twitter"></i></a>
+
+                                                    <!-- Google -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #dd4b39;" href="#!" role="button"><i
+                                                            class="fab fa-google"></i></a>
+
+                                                    <!-- Instagram -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #ac2bac;" href="#!" role="button"><i
+                                                            class="fab fa-instagram"></i></a>
+
+                                                    <!-- Linkedin -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #0082ca;" href="#!" role="button"><i
+                                                            class="fab fa-linkedin-in"></i></a>
+                                                    <!-- Github -->
+                                                    <a class="btn btn-primary btn-floating m-1 px-2"
+                                                        style="background-color: #333333;" href="#!" role="button"><i
+                                                            class="fab fa-github"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="modal-footer p-2">
+                                        <button type="button" class="btn btn-secondary p-1"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="sorting-info">
+                    <p class="infosearch"><span>49</span> <span class="infocolor">Consultant Physicans(s)</span> Found
+                    </p>
+                    <a href="/"><img id="filter" src="../../assets/img/sort-descending.png" alt=""></a>
+                </div>
+
+                <div class="doc-container">
+                    <div class="doc1 test" *ngFor="let doctor of doctors">
+                        <div class="doc-co-box">
+                            <div class="boxx1 d-flex flex-column">
+                                <img src="../../assets/img/doctor.png" alt="">
+                                <a href="" class="ViewProfile">View
+                                    Profile</a>
+                            </div>
+                            <div class="boxx2">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Specialist</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>{{doctor.name}}</td>
+                                            <td>{{doctor.age}}</td>
+                                            <td>{{doctor.gender}}</td>
+                                            <td>{{doctor.specialist}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="boxx3">
+                                <img id="video" src="../../assets/img/video-player.png" alt="">
+                            </div>
+                            <div class="boxx4">
+                                <h6>Next Available</h6>
+                                <p><span>1.40pm</span>, <span>Today</span></p>
+                            </div>
+                            <div class="boxx5">
+                                <form action="" target="_blank">
+                                    <input type="datetime-local" id="meeting-time" name="meeting-time"
+                                        value="2021-07-01T06:30" min="2021-07-1T06:30" max="2021-12-31T12:00">
+                                    <button class="Book-appo">Book Appointment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

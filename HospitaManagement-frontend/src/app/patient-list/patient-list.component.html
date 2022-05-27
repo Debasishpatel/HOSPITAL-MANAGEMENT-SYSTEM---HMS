@@ -1,0 +1,104 @@
+<div class="split">
+
+    <div class="box1">
+
+        <h3 class="my-4">Patient's List</h3>
+        <input type="text" name="search" [(ngModel)]="searchText" placeholder="Filter By Any keyword">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>VisitedDoctor</th>
+                    <th>DateOfVisit</th>
+                    <!-- <th>Action</th> -->
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let patient of patients | filter:searchText">
+
+                    <td>{{patient.id}}</td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.visitedDoctor}}</td>
+                    <td>{{patient.dateOfVisit | date}}</td>
+                    <!-- <td><button (click)="getPrescription()" class="btn-btn-danger">GET-Prescription</button></td> -->
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="box2 text-center">
+
+        <h3>Get Patient Details and Prescription</h3>
+
+        <form class="" #assignmentsForm (ngSubmit)="search(patientsid)">
+
+            <div class="container">
+                <input type="text" class="p-2" name="id" id="id" placeholder="Search By ID" [(ngModel)]="patientsid">
+                <button class="p-2" type="submit">Search</button>
+                <!-- <button (click)="getPrescription()" class="p-2" type="submit">GET-Prescription</button> -->
+            </div>
+
+        </form>
+
+
+
+        <div class="container" *ngIf="buttonclicked">
+
+            <div class="container" *ngFor="let patient of patients; let i = index">
+
+                <div class="container" *ngIf="patientsid == patient.id">
+
+
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>VisitedDoctor</th>
+                                <th>DateOfVisit</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+
+                                <td>{{patient.id}}</td>
+                                <td>{{patient.name}}</td>
+                                <td>{{patient.visitedDoctor}}</td>
+                                <td>{{patient.dateOfVisit | date}}</td>
+                                <td><button (click)="getPrescription()" class="btn-btn-danger">GET-Prescription</button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <!-- <ng-template #notFound>No Results Found</ng-template>  -->
+            </div>
+
+
+            <div class="container mt-2" *ngIf="patientsid > 26">
+                <p>NO SUCH PATIENT FOUND</p>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</div>

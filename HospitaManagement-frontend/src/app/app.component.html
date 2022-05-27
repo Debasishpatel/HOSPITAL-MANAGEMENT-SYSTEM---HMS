@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand ps-3" href="#" routerLink="home" routerLinkActive="active">HMS</a>
+    <button class="navbar-toggler rounded-pill border-0 " type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 mx-auto" style="--bs-scroll-height: 100px; ">
+        <li class="nav-item pe-3 ps-4">
+          <a class="nav-link active" aria-current="page" href="#" routerLink="home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item pe-3  ps-4">
+          <a class="nav-link" href="#" routerLink="doctors-info" routerLinkActive="active">Doctor's Info</a>
+        </li>
+        <li class="nav-item pe-3 ps-4">
+          <a class="nav-link" href="#" routerLink="patients-info" routerLinkActive="active">Patient's Info</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <form class="d-flex mx-auto px-5 my-3">
+    <input class="form-control me-2 input-group-lg" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info btn-dark border-2 rounded-3 btn-sm" type="submit">Search</button>
+
+  </form>
+</nav>
+
+
+
+<h1 class="text-center my-3">{{title}}</h1>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+<footer class="new_footer_area bg_color container-fluid footer">
+
+
+  <div class="bg-light text-center text-white ">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
+            class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i
+            class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
+            class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i
+            class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
+            class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">DevDesigns.com</a>
+    </div>
+    <!-- Copyright -->
+  </div>
+
+</footer>

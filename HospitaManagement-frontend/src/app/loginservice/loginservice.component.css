@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .cscon {
+    display: flex;
+    height: 80vh;
+  }
+  .cscon2 {
+    margin: auto;
+  }
+  form {
+    width: 20rem;
+  }
+  .form-width {
+    width: 20rem;
+    height: 4rem;
+  }
+  
