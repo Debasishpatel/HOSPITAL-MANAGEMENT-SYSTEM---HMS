@@ -13,9 +13,18 @@ it's my comprehensive assesment project . by Debasish Patel
 ![preview of code](https://github.com/Debasishpatel/HOSPITAL-MANAGEMENT-SYSTEM---HMS/blob/main/Book%20Appointment%20Page.jpg)
 
 #DOCTORS INFO
+![preview of code](https://github.com/Debasishpatel/HOSPITAL-MANAGEMENT-SYSTEM---HMS/blob/main/doctor's%20info%20page%20with%20add%20doctor%20fun.jpg)
 
 #ADD DOCTOR
+![preview of code](https://github.com/Debasishpatel/HOSPITAL-MANAGEMENT-SYSTEM---HMS/blob/main/add%20doctor%20page.jpg)
+
 
 #PATIENTS INFO
+![preview of code](https://github.com/Debasishpatel/HOSPITAL-MANAGEMENT-SYSTEM---HMS/blob/main/Patient's%20info%20page%20with%20search.jpg)
+
 
 #GET PRESCRIPTION
+![preview of code](https://github.com/Debasishpatel/HOSPITAL-MANAGEMENT-SYSTEM---HMS/blob/main/Get%20prescription%20page.jpg)
+
+
+
